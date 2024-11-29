@@ -382,7 +382,8 @@ public class pagprincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_JugadorActionPerformed
     
     
-    private void calcularFormula() {
+    private int calcularFormula() {
+        
     try {
         // Recuperar los valores desde los JSpinners
         int puntos = (2 * (int) jSpinnerTiros2.getValue()) + (3 * (int) jSpinnerTiros3.getValue()) + (int) jSpinnerLibresMetidos.getValue();
@@ -398,13 +399,15 @@ public class pagprincipal extends javax.swing.JFrame {
         int taponesRecibidos = (int) jSpinnerTaponesRecibidos.getValue();
         int faltasRealizadas = (int) jSpinnerFaltasRealizadas.getValue();
 
-        // Fórmula
+       // Fórmula
         int resultado = (puntos + rebotes + asistencias + robos + taponesFavor + faltasRecibidas)
                 - (tirosCampoFallados + tirosLibresFallados + perdidas + taponesRecibidos + faltasRealizadas);
 
-        
+        return resultado;  // Devuelve el resultado calculado
+
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Error al calcular la fórmula: " + e.getMessage());
+        return 0;  // Si ocurre un error, retornar 0 
     }
 }
     
@@ -438,6 +441,9 @@ public class pagprincipal extends javax.swing.JFrame {
             return;
         }
 
+        // Calcular el resultado usando la fórmula
+        int resultado = calcularFormula();  // Llama a calcularFormula y obtén el resultado
+        
         // Calcular %FG y %eFG
         double porcentajeFG = ((double) (tirosMetidos2 + tirosMetidos3) / tirosRealizados) * 100;
         double porcentajeEFG = ((double) (tirosMetidos2 + 1.5 * tirosMetidos3) / tirosRealizados) * 100;
@@ -452,10 +458,12 @@ public class pagprincipal extends javax.swing.JFrame {
         crearInformeExcel(filePath, nombreJugador, tirosRealizados, tirosMetidos2, tirosMetidos3, tirosLibresHechos, 
                           tirosLibresMetidos, puntosTotales, asistencias, robos, rebotes, taponesFavor, faltasRecibidas, 
                           tirosCampoFallados, tirosLibresFallados, perdidas, taponesRecibidos, faltasRealizadas, 
-                          tsPorcentaje, porcentajeFG, porcentajeEFG);
+                          tsPorcentaje, porcentajeFG, porcentajeEFG, resultado);
          
+        
         JOptionPane.showMessageDialog(null, "Informe generado exitosamente: EstadisticasNBA.xlsx");
-        } catch (Exception ex) {
+        
+         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Error al procesar los datos: " + ex.getMessage());
         }
 }
@@ -464,7 +472,7 @@ private void crearInformeExcel(String nombreArchivo, String nombreJugador, int t
     int tirosMetidos2, int tirosMetidos3, int tirosLibresHechos, int tirosLibresMetidos, 
     int puntosTotales, int asistencias, int robos,int Rebotes, int taponesFavor, int faltasRecibidas, 
     int tirosCampoFallados, int tirosLibresFallados, int perdidas, int taponesRecibidos, 
-    int faltasRealizadas, double tsPorcentaje, double porcentajeFG, double porcentajeEFG) throws IOException {
+    int faltasRealizadas, double tsPorcentaje, double porcentajeFG, double porcentajeEFG, int resultado) throws IOException {
    
     // Crear referencias para Workbook y Sheet
     Workbook libroExcel;
@@ -494,8 +502,8 @@ private void crearInformeExcel(String nombreArchivo, String nombreJugador, int t
         encabezado.createCell(5).setCellValue("Tiros Libres Metidos");
         encabezado.createCell(6).setCellValue("Puntos Totales");
         encabezado.createCell(7).setCellValue("TS%");
-        encabezado.createCell(8).setCellValue("% FG");
-        encabezado.createCell(9).setCellValue("% eFG");
+        encabezado.createCell(8).setCellValue("%FG");
+        encabezado.createCell(9).setCellValue("%eFG");
         encabezado.createCell(10).setCellValue("Rebotes");
         encabezado.createCell(11).setCellValue("Asistencias");
         encabezado.createCell(12).setCellValue("Robos");
@@ -506,6 +514,7 @@ private void crearInformeExcel(String nombreArchivo, String nombreJugador, int t
         encabezado.createCell(17).setCellValue("Pérdidas");
         encabezado.createCell(18).setCellValue("Tapones Recibidos");
         encabezado.createCell(19).setCellValue("Faltas Realizadas");
+        encabezado.createCell(20).setCellValue("Resultado");
     }
 
     // Buscar la última fila antes de la media
@@ -519,26 +528,70 @@ private void crearInformeExcel(String nombreArchivo, String nombreJugador, int t
 
     // Crear una nueva fila para los datos del jugador
     Row filaNueva = hoja.createRow(ultimaFilaDatos + 1);
-    filaNueva.createCell(0).setCellValue(nombreJugador);
-    filaNueva.createCell(1).setCellValue(tirosRealizados);
-    filaNueva.createCell(2).setCellValue(tirosMetidos2);  
-    filaNueva.createCell(3).setCellValue(tirosMetidos3);  
-    filaNueva.createCell(4).setCellValue(tirosLibresHechos);
-    filaNueva.createCell(5).setCellValue(tirosLibresMetidos);
-    filaNueva.createCell(6).setCellValue(puntosTotales);
-    filaNueva.createCell(7).setCellValue(tsPorcentaje);
-    filaNueva.createCell(8).setCellValue(porcentajeFG);
-    filaNueva.createCell(9).setCellValue(porcentajeEFG);
-    filaNueva.createCell(10).setCellValue(Rebotes);
-    filaNueva.createCell(11).setCellValue(asistencias);
-    filaNueva.createCell(12).setCellValue(robos);
-    filaNueva.createCell(13).setCellValue(taponesFavor);
-    filaNueva.createCell(14).setCellValue(faltasRecibidas);
-    filaNueva.createCell(15).setCellValue(tirosCampoFallados);
-    filaNueva.createCell(16).setCellValue(tirosLibresFallados);
-    filaNueva.createCell(17).setCellValue(perdidas);
-    filaNueva.createCell(18).setCellValue(taponesRecibidos);
-    filaNueva.createCell(19).setCellValue(faltasRealizadas);
+
+    Cell cell0 = filaNueva.createCell(0);
+    cell0.setCellValue(nombreJugador);
+
+    Cell cell1 = filaNueva.createCell(1);
+    cell1.setCellValue(tirosRealizados);
+
+    Cell cell2 = filaNueva.createCell(2);
+    cell2.setCellValue(tirosMetidos2);  
+
+    Cell cell3 = filaNueva.createCell(3);
+    cell3.setCellValue(tirosMetidos3);  
+
+    Cell cell4 = filaNueva.createCell(4);
+    cell4.setCellValue(tirosLibresHechos);
+
+    Cell cell5 = filaNueva.createCell(5);
+    cell5.setCellValue(tirosLibresMetidos);
+
+    Cell cell6 = filaNueva.createCell(6);
+    cell6.setCellValue(puntosTotales);
+
+    Cell cell7 = filaNueva.createCell(7);
+    cell7.setCellValue(tsPorcentaje);
+
+    Cell cell8 = filaNueva.createCell(8);
+    cell8.setCellValue(porcentajeFG);
+
+    Cell cell9 = filaNueva.createCell(9);
+    cell9.setCellValue(porcentajeEFG);
+
+    Cell cell10 = filaNueva.createCell(10);
+        int rebotes = 0;
+    cell10.setCellValue(rebotes);
+
+    Cell cell11 = filaNueva.createCell(11);
+    cell11.setCellValue(asistencias);
+
+    Cell cell12 = filaNueva.createCell(12);
+    cell12.setCellValue(robos);
+
+    Cell cell13 = filaNueva.createCell(13);
+    cell13.setCellValue(taponesFavor);
+
+    Cell cell14 = filaNueva.createCell(14);
+    cell14.setCellValue(faltasRecibidas);
+
+    Cell cell15 = filaNueva.createCell(15);
+    cell15.setCellValue(tirosCampoFallados);
+
+    Cell cell16 = filaNueva.createCell(16);
+    cell16.setCellValue(tirosLibresFallados);
+
+    Cell cell17 = filaNueva.createCell(17);
+    cell17.setCellValue(perdidas);
+
+    Cell cell18 = filaNueva.createCell(18);
+    cell18.setCellValue(taponesRecibidos);
+
+    Cell cell19 = filaNueva.createCell(19);
+    cell19.setCellValue(faltasRealizadas);
+
+    Cell cell20 = filaNueva.createCell(20);
+    cell20.setCellValue(resultado);
 
     // Calcular medias generales de las columnas numéricas
     Row filaMedia = hoja.createRow(ultimaFilaDatos + 2); // La fila siguiente a los datos del jugador
@@ -546,15 +599,30 @@ private void crearInformeExcel(String nombreArchivo, String nombreJugador, int t
 
     int totalFilasDatos = ultimaFilaDatos + 1; 
     
-    for (int col = 1; col <= 19; col++) { // Columnas numéricas de la 1 a la 9
+    for (int col = 1; col <= 20; col++) { // Columnas numéricas de la 1 a la 20
+        
         double suma = 0;
-        for (int i = 1; i <= totalFilasDatos; i++) { // Ignorar encabezados
-            Row filaDatos = hoja.getRow(i);
-            suma += filaDatos.getCell(col).getNumericCellValue();
+        int count = 0;  // Contador de celdas numéricas válidas
+        
+      for (int i = 1; i <= totalFilasDatos; i++) { // Ignorar encabezados
+        Row filaDatos = hoja.getRow(i);
+        
+        // Verificar si la celda existe y tiene un valor numérico
+        Cell cell = filaDatos.getCell(col);
+        if (cell != null && cell.getCellType() == CellType.NUMERIC) {
+            suma += cell.getNumericCellValue();
+            count++;
         }
-        double media = suma / totalFilasDatos;
-        filaMedia.createCell(col).setCellValue(media);
     }
+    
+    // Evitar la división por cero en caso de no encontrar valores numéricos válidos
+    if (count > 0) {
+        double media = suma / count;
+        filaMedia.createCell(col).setCellValue(media);
+    } else {
+        filaMedia.createCell(col).setCellValue(0);  // Si no hay celdas válidas, asignar 0
+    }
+}
 
     // Autoajustar columnas
     for (int i = 0; i <= 9; i++) {  
