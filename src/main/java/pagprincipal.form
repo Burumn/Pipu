@@ -4,11 +4,66 @@
   <NonVisualComponents>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
     </Component>
+    <Component class="javax.swing.JMenuItem" name="jMenuItem1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="jMenu1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tama&#xf1;o"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JRadioButtonMenuItem" name="jMenuItemPeque&#xf1;o">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup1"/>
+                </Property>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Peque&#xf1;o"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemPeque&#xf1;oActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JRadioButtonMenuItem" name="jMenuItemMediano">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mediano"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JRadioButtonMenuItem" name="jMenuItemGrande">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Grande"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Condiciones de Servicio"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu2MouseClicked"/>
+          </Events>
+        </Menu>
+      </SubComponents>
+    </Menu>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -27,12 +82,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <Component id="jPanel1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -47,12 +102,15 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jTabbedTiros" min="-2" pref="751" max="-2" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jTabbedTiros" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jTabbedTiros" alignment="0" pref="410" max="32767" attributes="0"/>
+              <Component id="jTabbedTiros" min="-2" pref="458" max="-2" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -88,30 +146,17 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Component id="Equipo" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxEquipo" min="-2" pref="132" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                  <Component id="jugador" min="-2" pref="52" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jComboBoxJugador" min="-2" pref="130" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                          <Component id="jLabel8" min="-2" pref="112" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel2" min="-2" pref="131" max="-2" attributes="0"/>
-                                              <Component id="jLabel7" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="personalizado5" pref="183" max="32767" attributes="0"/>
+                                              <Component id="personalizado4" max="32767" attributes="0"/>
+                                              <Component id="personalizado6" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jSpinnerTiros3" min="-2" pref="74" max="-2" attributes="0"/>
                                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -119,29 +164,45 @@
                                                   <Component id="jSpinnerLibresHechos" min="-2" pref="74" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
+                                          <EmptySpace pref="41" max="32767" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
-                                          <Component id="jLabel5" min="-2" pref="112" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="personalizado3" min="-2" pref="172" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="91" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jSpinnertirosRealizados" min="-2" pref="92" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jLabel6" max="32767" attributes="0"/>
-                                              <Component id="jLabel4" min="-2" pref="123" max="-2" attributes="0"/>
-                                              <Component id="jLabel3" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                                              <Component id="personalizado7" alignment="0" pref="221" max="32767" attributes="0"/>
+                                              <Component id="personalizado8" max="32767" attributes="0"/>
+                                              <Component id="personalizado9" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                          <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jSpinnerTiros2" min="-2" pref="74" max="-2" attributes="0"/>
                                               <Component id="jSpinnerRealizados3" min="-2" pref="74" max="-2" attributes="0"/>
                                               <Component id="jSpinnerLibresMetidos" min="-2" pref="74" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="personalizado2" min="-2" pref="103" max="-2" attributes="0"/>
+                                              <Component id="jSpinnertirosRealizados" min="-2" pref="92" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Component id="jComboBoxJugador" min="-2" pref="130" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                                  <Component id="personalizado1" min="-2" pref="93" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jComboBoxEquipo" min="-2" pref="132" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
@@ -151,144 +212,72 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jComboBoxEquipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jugador" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               <Component id="jComboBoxJugador" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Equipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="personalizado1" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="personalizado2" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel5" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                               <Component id="jSpinnertirosRealizados" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="personalizado3" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jSpinnerLibresHechos" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="personalizado4" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                       <Component id="jSpinnerRealizados2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="personalizado5" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel7" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="jSpinnerTiros3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="personalizado6" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jSpinnerLibresMetidos" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                                      <Component id="jLabel6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                      <Component id="personalizado7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel3" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="jSpinnerTiros2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="personalizado8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel4" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="jSpinnerRealizados3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="personalizado9" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="64" max="32767" attributes="0"/>
+                          <EmptySpace pref="116" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel5">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Tiros Realizados"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnertirosRealizados">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel8">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Tiros libres hechos"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerLibresHechos">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel6">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Tiros libres metidos"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerLibresMetidos">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel2">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Tiros realizados de 2"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerRealizados2">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel3">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Tiros metidos de 2"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerTiros2">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel7">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Tiros realizados de 3"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerRealizados3">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel4">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Tiros metidos de 3"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerTiros3">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jugador">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Jugador"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="Equipo">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Equipo"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="jComboBoxJugador">
                   <Properties>
@@ -317,6 +306,51 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
+                <Component class="Personalizado" name="personalizado1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Equipo"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Jugador"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tiros Realizados"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tiros Libres Hechos"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado5">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tiros realizados de 2"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado6">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tiros realizados de 3"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado7">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tiros libres metidos"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado8">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tiros metidos de 2"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado9">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tiros metidos de 3"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel2">
@@ -338,49 +372,54 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jSpinnerAsistencias" min="-2" pref="72" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel9" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel11" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
-                                                  <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jSpinnerRebotes" max="32767" attributes="0"/>
-                                                  <Component id="jSpinnerRobos" max="32767" attributes="0"/>
-                                                  <Component id="jSpinnerPerdidas" alignment="1" min="-2" pref="72" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="jSpinnerFaltasRecibidas" min="-2" pref="72" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                                   <Component id="BotonCalcular" min="-2" pref="111" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="personalizado14" pref="163" max="32767" attributes="0"/>
+                                      <Component id="personalizado13" max="32767" attributes="0"/>
+                                      <Component id="personalizado12" max="32767" attributes="0"/>
+                                      <Component id="personalizado11" max="32767" attributes="0"/>
+                                      <Component id="personalizado10" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jSpinnerRebotes" max="32767" attributes="0"/>
+                                          <Component id="jSpinnerRobos" max="32767" attributes="0"/>
+                                          <Component id="jSpinnerPerdidas" alignment="1" min="-2" pref="72" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jSpinnerAsistencias" alignment="1" min="-2" pref="72" max="-2" attributes="0"/>
+                                      <Component id="jSpinnerFaltasRecibidas" alignment="1" min="-2" pref="72" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
                                   <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="personalizado16" min="-2" pref="192" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="personalizado17" min="-2" pref="223" max="-2" attributes="0"/>
+                                              <Component id="personalizado15" min="-2" pref="223" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="personalizado19" max="32767" attributes="0"/>
+                                              <Component id="personalizado18" pref="192" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jSpinnerFaltasRealizadas" min="-2" pref="72" max="-2" attributes="0"/>
                                       <Component id="jSpinnerTaponesRecibidos" min="-2" pref="72" max="-2" attributes="0"/>
@@ -390,55 +429,64 @@
                                   </Group>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
                                   <Component id="jButtonGrafico" min="-2" pref="111" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                                   <Component id="PDF" min="-2" pref="114" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="101" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jSpinnerRebotes" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jSpinnerTirosCampoFallados" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSpinnerTaponesFavor" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSpinnerAsistencias" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSpinnerTirosLibresFallados" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSpinnerRobos" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="personalizado10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="personalizado15" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSpinnerTaponesRecibidos" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSpinnerPerdidas" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jSpinnerTaponesFavor" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jSpinnerAsistencias" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="personalizado11" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="personalizado16" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSpinnerFaltasRecibidas" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSpinnerFaltasRealizadas" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jSpinnerTirosLibresFallados" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jSpinnerRobos" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="personalizado12" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="personalizado17" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jSpinnerTaponesRecibidos" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jSpinnerPerdidas" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="personalizado13" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="personalizado18" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="personalizado14" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Component id="jSpinnerFaltasRecibidas" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jSpinnerFaltasRealizadas" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="personalizado19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButtonGrafico" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                               <Component id="BotonCalcular" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
@@ -450,77 +498,13 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel9">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Rebotes"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerRebotes">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel10">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Asistencias"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerAsistencias">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel11">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Robos"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerRobos">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel12">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Tapones a Favor"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerTaponesFavor">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel13">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Tiros de campo fallados"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel14">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Tiros libres fallados"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel15">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Perdidas"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel16">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Tapones recibidos"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerTirosCampoFallados">
                 </Component>
@@ -538,23 +522,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCalcularActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel17">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Faltas Recibidas"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerFaltasRecibidas">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel18">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Faltas Realiadas"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinnerFaltasRealizadas">
                 </Component>
@@ -570,6 +538,56 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PDFActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="Personalizado" name="personalizado10">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Rebotes"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado11">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Asistencias"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado12">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Robos"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado13">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Perdidas"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado14">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Faltas Recibidas"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado15">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tiros de campo fallados"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado16">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tapones a Favor"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado17">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tiros libres fallados"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado18">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tapones recibidos"/>
+                  </Properties>
+                </Component>
+                <Component class="Personalizado" name="personalizado19">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Faltas Realizadas"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
